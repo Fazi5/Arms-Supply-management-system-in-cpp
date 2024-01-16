@@ -9,7 +9,7 @@ int numShipments = 0;
 struct Shipment {
     int id;
     string name,from, to;
-}Shipments[MAX_SHIPMENTS],temp_shipment[MAX_SHIPMENTS];
+}Shipments[MAX_SHIPMENTS];
 void addShipment() {
     cout << setw(10) << "----------" << setw(10) << endl;
     cout << setw(10) << "Adding Shipment\n";
@@ -138,7 +138,7 @@ void deleteShipment() {
 
     int find = searchShipment(searchId);
     if (find != -1) {
-        // Delete Shipment by shifting elements
+        
         for (int i = find; i < numShipments - 1; i++) {
             Shipments[i] = Shipments[i + 1];
         }
@@ -186,23 +186,24 @@ void readShipmentsFromFile() {
 
     cout << "Shipments read from file successfully!\n";
 }
-void temp_readShipmentsFromFile() {
-    ifstream fin("Shipmention.txt");
-    if (!fin.is_open()) {
-        cerr << "Error opening file\n";
-        return;
-    }
 
-    while (fin >> temp_shipment[numShipments].id >> temp_shipment[numShipments].name >> temp_shipment[numShipments].from >> temp_shipment[numShipments].to) {
-        numShipments++;
-        if (numShipments >= MAX_SHIPMENTS) {
-            cerr << "Maximum limit reached. Some Shipments may not be loaded.\n";
-            break;
-        }
-    }
-
-    cout << "Shipments read from file successfully!\n";
-}
+//void temp_readShipmentsFromFile() {
+//    ifstream fin("Shipmention.txt");
+//    if (!fin.is_open()) {
+//        cerr << "Error opening file\n";
+//        return;
+//    }
+//
+//    while (fin >> temp_shipment[numShipments].id >> temp_shipment[numShipments].name >> temp_shipment[numShipments].from >> temp_shipment[numShipments].to) {
+//        numShipments++;
+//        if (numShipments >= MAX_SHIPMENTS) {
+//            cerr << "Maximum limit reached. Some Shipments may not be loaded.\n";
+//            break;
+//        }
+//    }
+//
+//    cout << "Shipments read from file successfully!\n";
+//}
 
 void Shipmentmenu() {
 
@@ -236,7 +237,7 @@ void Shipmentmenu() {
             deleteShipment();
             break;
         case 6:
-            // Store Shipments to file before exiting
+            
             storeShipmentsToFile();
             cout << setw(10) << "----------" << setw(10) << endl;
             cout << "Exiting the program.\n";

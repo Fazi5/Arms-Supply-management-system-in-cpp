@@ -2,8 +2,6 @@
 #include<fstream>
 #include<string>
 #include<iomanip>
-#include"Product.h"
-#include"Shipment.h"
 #include"Officer.h"
 using namespace std;
 void Mainmenu();
@@ -17,8 +15,8 @@ void Mainmenu(){
         cout << "\n<----------ARMS SUPPLY MANAGMENT SYSTEM.---------->\n";
         cout << "<-----MAIN___MENU----->\n";
         cout << "1.Product Info.\n2.Shipments Info.\n3.Officer Info.\n4.Exit menu.\n";
-        
-        
+        temp_readProductsFromFile();
+        temp_readShipmentsFromFile();
         
         int options;
         cin >> options;

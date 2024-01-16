@@ -11,7 +11,7 @@ struct Product {
     string name;
     string type;
     double amount;
-}products[MAX_PRODUCTS],temp_products[MAX_PRODUCTS];
+}products[MAX_PRODUCTS];
     void addProduct() {
         cout << setw(10) << "----------" << setw(10) << endl;
         cout <<setw(10)<<"Adding Product\n";
@@ -188,7 +188,8 @@ struct Product {
 
         cout << "Products read from file successfully!\n";
     }
-    void temp_readProductsFromFile() {
+
+   /* void temp_readProductsFromFile() {
         ifstream fin("production.txt");
         if (!fin.is_open()) {
             cerr << "Error opening file\n";
@@ -204,7 +205,8 @@ struct Product {
         }
 
         cout << "Products read from file successfully!\n";
-    }
+    }*/
+
     void Productmenu() {
 
         readProductsFromFile();

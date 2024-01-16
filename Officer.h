@@ -14,6 +14,7 @@ struct Officer {
     int productid, shipmentid;
     
 }Officers[MAX_OFFICERS];
+
 void addOfficer() {
     cout << setw(10) << "----------" << setw(10) << endl;
     cout << setw(10) << "Adding Officer Info\n";
@@ -136,8 +137,7 @@ void readOfficersFromFile() {
 }
 
 void Officermenu() {
-    temp_readProductsFromFile();
-    temp_readShipmentsFromFile();
+   
     readOfficersFromFile();
 
     int choice;
@@ -160,7 +160,7 @@ void Officermenu() {
             break;
         
         case 3:
-            // Store Officers to file before exiting
+            
             storeOfficersToFile();
             cout << setw(10) << "----------" << setw(10) << endl;
             cout << "Exiting the program.\n";
